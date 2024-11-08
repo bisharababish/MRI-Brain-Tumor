@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Demo - MRI Brain Tumor Recognition</title>
+    <link rel="icon" href="../images/MRI Icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../styles/howtodemo.css">
+</head>
+<body>
+    <div class="container">
+        <label class="switch">
+            <input type="checkbox" id="language-toggle" onchange="toggleLanguage()">
+            <span class="slider round"></span>
+            <span id="lang-label">EN</span>
+            
+        </label>
+        <nav class="mega-menu">
+            <ul>
+                <li>
+                    <br>
+                    <a href="#" id="menunavi">Navigation</a>
+                    <div class="dropdown">
+                        <div class="dropdown-section">
+                            <ul>
+                <li><a href="../index.html#Introduction" target="_blank" id="menu-intro"> Introduction</a></li>
+                <li><a href="../index.html#Feedback" target="_blank" id="menu-feedback"> Feedback</a></li>
+                <li><a href="aboutus.html" target="_blank" id="menu-about"></i> About Us</a></li>
+            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="content">
+            <nav class="section">
+                <div class="section-content">
+                    <h2 class="section-title" id="demo-title">How To Demo</h2>
+                    <p id="demo-paragraph">Click on a folder to open it and display the images inside. Only one folder can be opened at a time. When you choose an image from any folder it would show the information about it.</p>
+                    <div class="flex-container"> 
+                        <div class="sidebar">
+                            <h2 id="sidebar-title">MRI Brain Tumor Types</h2>
+                            <div class="folder">
+                                <h3 id="folder-meningioma">Meningioma</h3>
+                                <div class="images">
+                                    <img src="../images/meningioma.jpeg" alt="Image 1">
+                                    <img src="../images/test.jpeg" alt="Image 2">
+                                    <img src="../images/meningioma.jpeg" alt="Image 3">
+                                </div>
+                            </div>
+                            <div class="folder">
+                                <h3 id="folder-hemangioblastoma">Hemangioblastoma</h3>
+                                <div class="images">
+                                    <img src="../images/hemangioblastoma.jpeg" alt="Image 1">
+                                    <img src="../images/hemangioblastoma.jpeg" alt="Image 2">
+                                    <img src="../images/hemangioblastoma.jpeg" alt="Image 3">
+                                </div>
+                            </div>
+                            <div class="folder">
+                                <h3 id="folder-medulloblastoma">Medulloblastoma</h3>
+                                <div class="images">
+                                    <img src="../images/medulloblastoma.jpg" alt="Image 1">
+                                    <img src="../images/medulloblastoma.jpg" alt="Image 2">
+                                    <img src="../images/medulloblastoma.jpg" alt="Image 3">
+                                </div>
+                            </div>
+                            <div class="folder">
+                                <h3 id="folder-pilocyticAstrocytoma">Pilocytic Astrocytoma</h3>
+                                <div class="images">
+                                    <img src="../images/pilocyticastrocytoma.jpeg" alt="Image 1">
+                                    <img src="../images/pilocyticastrocytoma.jpeg" alt="Image 2">
+                                    <img src="../images/pilocyticastrocytoma.jpeg" alt="Image 3">
+                                </div>
+                            </div>
+                            <div class="folder">
+                                <h3 id="folder-centralNeurocytoma">Central Neurocytoma</h3>
+                                <div class="images">
+                                    <img src="../images/centralneurocytoma.jpeg" alt="Image 1">
+                                    <img src="../images/centralneurocytoma.jpeg" alt="Image 2">
+                                    <img src="../images/centralneurocytoma.jpeg" alt="Image 3">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-display">
+                            <img id="selected-image" src="" alt="">
+                            <div id="image-info"></div>
+                        </div>
+                    </div>
+                    <button id="clear-button">Clear</button> 
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script src="../scripts/close-slide.js"></script>
+    <script src="../scripts/toggle-folders.js"></script>
+    <script src="../scripts/TranslationCodes.js/howtodemo.js"></script>
+
+</body>
+</html>

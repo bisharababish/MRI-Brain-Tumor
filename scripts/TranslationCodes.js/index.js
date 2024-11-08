@@ -1,0 +1,103 @@
+const translations = {
+    en: {
+        title: 'MRI Brain Tumor Recognition',
+        introTitle: 'Introduction',
+        introParagraph: 'Welcome to a new era in medical diagnostics. Our MRI Brain Tumor Recognition Application harnesses the power of Artificial Intelligence (AI) to revolutionize the detection and analysis of brain tumors. Designed for accuracy and speed, our application specifically targets complex tumors such as: Meningioma, Hemangioblastoma, Medulloblastoma, Pilocytic Astrocytoma, and central Neurocytoma.',
+        introSecondParagraph: 'MRI Brain Tumor Recognition Application is a combination of Artificial intelligence (AI) and MRI to accurately detect brain tumors. Unlike the traditional method that relies on radiologists, the application provides a fast, accurate, and efficient way to diagnose brain tumors and offer patients the necessary information, including possible treatments. This project aims to improve the detection of brain tumors faster and with a higher success rate than the traditional method.',
+        introThirdParagraph: 'Led by two dedicated computer science students passionate about leveraging technology for societal betterment, our project focuses on blending expertise in AI, medical imaging, and oncology. With a shared commitment to advancing healthcare, we aspire to contribute significantly to the collective efforts in the fight against brain cancer.',
+        feedbackTitle: 'Feedback Submission',
+        feedbackParagraph: 'If you have any questions or having some feedbacks, please feel free to hit us up with some!',
+        nameLabel: 'Name:',
+        emailLabel: 'Email:',
+        messageLabel: 'Message:',
+        submitButton: 'Send Feedback',
+        menuItems: {
+            menunavi: 'Navigation',
+            introduction: 'Introduction',
+            howToDemo: 'How To Demo',
+            aboutUs: 'About Us',
+        },
+        imageTitles: {
+            meningioma: 'Meningioma',
+            hemangioblastoma: 'Hemangioblastoma',
+            medulloblastoma: 'Medulloblastoma',
+            pilocyticAstrocytoma: 'Pilocytic Astrocytoma',
+            centralNeurocytoma: 'Central Neurocytoma'
+        }
+
+    },
+    ar: {
+        title: 'التعرف على أورام الدماغ بالرنين المغناطيسي',
+        introTitle: 'مقدمة',
+        introParagraph: 'مرحبًا بكم في عصر جديد في التشخيص الطبي. يستخدم تطبيق التعرف على أورام الدماغ. بالرنين لاحداث ثورة في اكتشاف وتحليل أورام الدماغ مصمم بدقة الذكاء الاصطناعي التي لديها السرعة البديهة، و يستهدف نطبيقنا بشكل خاص الأورام المعقدة مثل: الورم السجائي، الورم الوعائي الدموي، الورم الأرومي النخاعي، الورم النجمي الشعري، و الورم العصبي المركزي',
+        introSecondParagraph: 'تطبيق التعرف على أورام الدماغ بالرنين المغناطيسي يجمع بين الذكاء الاصطناعي و تقنيات الرنين المغناطيسي لاكتشاف أورام الدماغ بدقة فائقة، بخلاف الطرق التقليدية التي تعتمد على أطباء الأشعة، يوفر هذا التطبيق وسيلة سريعة, دقيقة و فعالة لتشخيص أورام الدماغ و تزويد المرضى بالمعلومات الضرورية، بما في ذلك الخيارات العلاجية المحتملة. و يهدف هذا المشروع الى تحسين سرعة و دقة اكشتاف أورام الدماغ مع تحقيق معدل نجاح أعلى مقارنة بالطرق التقليدية',
+        introThirdParagraph: 'يقود مشروعنا طالبان مخلصان في مجال علوم الكمبيوتر، شغوفان باستخدام التكنولوجيا لتحسين المجتمع، يركز مشروعنا على دمج الخبرات في الذكاء الاصطناعي، التصوير الطبي، وعلم الأورام. من خلال التزام مشترك بتطوير الرعاية الصحية، نطمح إلى المساهمة بشكل كبير في الجهود الجماعية لمكافحة سرطان الدماغ',
+        feedbackTitle: 'إرسال الملاحظات',
+        feedbackParagraph: '!إذا هناك أي شيء أو استفسارات قد تكون لديك، فلا تتردد في التواصل معنا. فريقنا موجود لمساعدتك بأي طريقة ممكنة، رضاكم هو أولويتنا القصوى',
+        nameLabel: ':الاسم',
+        emailLabel: ':البريد الإلكتروني',
+        messageLabel: ':الرسالة',
+        submitButton: 'إرسال الملاحظات',
+        menuItems: {
+            introduction: ' مقدمة',
+            howToDemo: 'كيفية العرض',
+            aboutUs: ' نبذة عنا',
+            menunavi: 'تصفح'
+        },
+        imageTitles: {
+            meningioma: 'ورم السحايا',
+            hemangioblastoma: 'ورم وعائي دموي',
+            medulloblastoma: 'ورم أرومي نخاعي',
+            pilocyticAstrocytoma: 'ورم نجمي شعري',
+            centralNeurocytoma: 'ورم عصبي مركزي'
+        }
+    }
+};
+
+function toggleLanguage() {
+    const isArabic = document.getElementById('language-toggle').checked;
+
+    const lang = isArabic ? 'ar' : 'en';
+    document.body.classList.toggle('arabic', isArabic);
+    document.getElementById('lang-label').textContent = isArabic ? 'AR' : 'EN';
+
+    const elementsToUpdate = [
+        { selector: 'title', property: 'textContent', value: translations[lang].title },
+        { selector: '.header h1', property: 'innerHTML', value: isArabic ? 'التعرف على أورام الدماغ <span class="highlight"> بالرنين المغناطيسي</span>' : '<span class="highlight">MRI</span> Brain Tumor Recognition' },
+        { selector: '.section-title', property: 'textContent', value: translations[lang].introTitle },
+        { selector: '#intro-paragraph', property: 'textContent', value: translations[lang].introParagraph },
+        { selector: '#intro-second-paragraph', property: 'textContent', value: translations[lang].introSecondParagraph },
+        { selector: '#intro-third-paragraph', property: 'textContent', value: translations[lang].introThirdParagraph },
+        { selector: '#Feedback .section-title', property: 'textContent', value: translations[lang].feedbackTitle },
+        { selector: '#feedback-paragraph', property: 'textContent', value: translations[lang].feedbackParagraph },
+        { selector: '#name-label', property: 'textContent', value: translations[lang].nameLabel },
+        { selector: '#email-label', property: 'textContent', value: translations[lang].emailLabel },
+        { selector: '#message-label', property: 'textContent', value: translations[lang].messageLabel },
+        { selector: '.submit-btn', property: 'textContent', value: translations[lang].submitButton },
+        { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
+        { selector: '#menu-demo', property: 'innerHTML', value: translations[lang].menuItems.howToDemo },
+        { selector: '#menu-about', property: 'innerHTML', value: translations[lang].menuItems.aboutUs },
+        { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi } // Added 'property' field here
+    ];
+
+    elementsToUpdate.forEach(({ selector, property, value }) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            element.style.opacity = 0;
+            setTimeout(() => {
+                element[property] = value;
+                element.style.opacity = 1;
+            }, 300);
+        }
+    });
+    const images = document.querySelectorAll('.intro-image');
+    images.forEach((img, index) => {
+        const titleKey = Object.keys(translations[lang].imageTitles)[index];
+        img.title = translations[lang].imageTitles[titleKey];
+    });
+    document.getElementById('menu-intro').innerHTML = translations[lang].menuItems.introduction;
+    document.getElementById('menu-demo').innerHTML = translations[lang].menuItems.howToDemo;
+    document.getElementById('menu-about').innerHTML = translations[lang].menuItems.aboutUs;
+
+}
+

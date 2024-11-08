@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+/* the whole html page for smoother scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* body page for the whole page which defines some certain things */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    user-select: none;
+
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* mega menu dropdown for the navigation panel with its three sections*/
+.mega-menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    transform: translateY(-10px);
+    z-index: 1000;
+}
+
+.mega-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background: transparent;
+}
+
+.mega-menu li {
+    position: relative;
+    padding: 0 15px;
+}
+
+.mega-menu a {
+    display: block;
+    padding: 13px 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1px;
+    transition: color 0.3s, background-color 0.3s;
+    transform: translateY(-10px);
+}
+
+.mega-menu ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background-color: #FF6B6B;
+    width: 0;
+    transition: width 0.3s ease;
+}
+
+.mega-menu ul li a:hover::after {
+    width: 100%;
+}
+
+.dropdown {
+    position: absolute;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: linear-gradient(45deg, #003366, #006699);
+    width: 500px;
+    height: 40px;
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    top: 100%;
+    border-radius: 8px;
+    border: 1px solid;
+    transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+}
+
+.mega-menu li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0px);
+}
+
+.dropdown ul {
+    padding: 20px;
+    text-align: center;
+}
+
+.dropdown ul li a {
+    color: white;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.dropdown ul li a:hover {
+    color: white;
+}
+
+/* button to switch languages en to ar */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch .slider {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 10px;
+}
+
+.switch .slider:before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.switch input:checked+.slider {
+    background-color: #2196F3;
+    transform: rotate(360deg);
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+#lang-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+    margin-left: 10px;
+
+}
+
+.switch input:checked~#lang-label {
+    color: #FF6B6B;
+}
+
+/* fade in affect when translation*/
+.title,
+.team-member .member-details h3,
+.team-member .member-role,
+.team-member .member-bio,
+#menu-intro,
+#menu-breakdown,
+#menu-demo,
+#menu-feedback {
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Fade-in effect for language switch */
+.switch input:checked~#lang-label,
+.switch input:checked+.slider,
+.switch input:checked+.slider:before {
+    transition: background-color 0.3s, transform 0.3s, color 0.3s;
+}
+
+
+/* content whole page css */
+.content {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 32px;
+
+    transition: margin-left 0.3s ease;
+
+}
+
+/*  team section pics and things */
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.team-member:hover {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.member-photo {
+    flex: 1;
+    max-width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.member-photo img:hover {
+    transform: scale(1.1);
+}
+
+.member-details {
+    flex: 2;
+    color: white;
+}
+
+.member-role {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.bio-label {
+    font-weight: bold;
+    color: #FF6B6B;
+    margin-bottom: 5px;
+}
+
+.member-bio {
+    color: #ccc;
+}
+
+.member-bio h4 {
+    font-weight: bold;
+    color: #FF6B6B;
+    margin-bottom: 10px;
+}
+
+.member-details::before,
+.member-details::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #FF6B6B, #FF4B4B);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.member-details::after {
+    top: auto;
+    bottom: 0;
+}
+
+.team-member:hover .member-details::before,
+.team-member:hover .member-details::after {
+    transform: translateX(0);
+}
+
+.team-member p {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* arabic translation */
+.arabic .bio-label,
+.arabic .member-bio,
+.arabic .team-member .member-details h3,
+.arabic .team-member .member-role {
+    text-align: right;
+}
+
+.arabic {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.arabic .member-details {
+    text-align: right;
+}
+
+.arabic .team-member {
+    direction: rtl;
+    padding: 20px 20px 20px 40px;
+}
+
+.arabic .member-photo {
+    margin-left: 20px;
+}
+
+/* back to top button */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #FF6B6B;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#back-to-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+}
+
+#back-to-top:hover {
+    background-color: #FF4B4B;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+#back-to-top:hover::before {
+    left: 100%;
+}
+
+
+/* media for mobile responsiveness */
+@media (max-width: 768px) {
+    html {
+        overflow-x: scroll;
+    }
+
+    .container,
+    .content {
+        width: 100%;
+        padding: 10px;
+        box-shadow: none;
+        border-radius: 0;
+        flex-direction: column;
+    }
+
+    .team-section {
+        flex-direction: column;
+    }
+
+    .team-member {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .member-photo {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+    }
+
+    .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .team-member:hover {
+        transform: none;
+        background: rgba(0, 0, 0, 0.5);
+        box-shadow: none;
+    }
+
+    .team-member {
+        border: none;
+        padding: 10px;
+    }
+
+    .team-member .member-details::before,
+    .team-member .member-details::after {
+        display: none;
+    }
+
+    .member-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .member-role,
+    .bio-label,
+    .member-bio {
+        text-align: center;
+    }
+
+    .member-details {
+        padding: 10px;
+    }
+
+    .member-details {
+        text-align: center;
+    }
+
+
+    .arabic .team-member {
+        direction: rtl;
+        text-align: right;
+    }
+
+    .arabic .member-details,
+    .arabic .member-bio {
+        text-align: right;
+    }
+
+}

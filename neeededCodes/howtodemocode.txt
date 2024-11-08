@@ -1,0 +1,266 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.images img');
+    const selectedImage = document.getElementById('selected-image');
+    const imageInfo = document.getElementById('image-info');
+    const clearButton = document.getElementById('clear-button');
+    const languageToggle = document.getElementById('language-toggle');
+
+    let currentLanguage = 'en';
+
+    const imageDetails = {
+        en: {
+            'meningioma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'test.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma4.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma5.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma6.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma7.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma8.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'meningioma9.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+
+            'hemangioblastoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma4.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma5.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma6.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma7.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma8.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'hemangioblastoma9.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+
+            'medulloblastoma.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma1.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma2.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma3.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma4.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma5.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma6.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma7.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma8.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'medulloblastoma9.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+
+            'pilocyticastrocytoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma1.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma4.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma5.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma6.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma7.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma8.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'pilocyticastrocytoma9.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+
+            'centralneurocytoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma1.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma4.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma5.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma6.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma7.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma8.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'centralneurocytoma9.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+        },
+        ar: {
+            'meningioma.jpeg': ['الورم: ورم السحايا', 'ورم: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي داخل الجمجمة.', 'شدة: منخفضة', 'دقة: 95%', 'الأبعاد: 4.5 سم × 3.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'test.jpeg': ['ورم: نعم', 'نظرة عامة: نظرة عامة اختبارية للورم.', 'شدة: متوسطة', 'دقة: 90%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'meningioma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma4.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma5.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma6.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma7.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma8.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'meningioma9.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+
+            'hemangioblastoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma4.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma5.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma6.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma7.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma8.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'hemangioblastoma9.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+
+            'medulloblastoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:ss', 'قابل للإزالة:ss'],
+            'medulloblastoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma4.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma5.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma6.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma7.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma8.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'medulloblastoma9.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+
+            'pilocyticastrocytoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:ss', 'العلاجات:ss', 'قابل للإزالة:ss'],
+            'pilocyticastrocytoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma4.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma5.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma6.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma7.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma8.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'pilocyticastrocytoma9.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+
+            'centralneurocytoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:ss', 'العلاجات:ss', 'قابل للإزالة:ss'],
+            'centralneurocytoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma4.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma5.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma6.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma7.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma8.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'centralneurocytoma9.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+        }
+    };
+
+    function updateImageDetails(imgSrc) {
+        const imgName = imgSrc.split('/').pop();
+        const details = imageDetails[currentLanguage][imgName];
+        imageInfo.innerHTML = ''; // Clear previous content
+        const ul = document.createElement('ul');
+        details.forEach(detail => {
+            const li = document.createElement('li');
+            li.textContent = detail;
+            ul.appendChild(li);
+        });
+        imageInfo.appendChild(ul);
+        selectedImage.style.display = 'block'; // Ensure the image is displayed
+        imageInfo.style.display = 'block'; // Ensure the info is displayed
+    }
+
+    languageToggle.addEventListener('change', () => {
+        currentLanguage = languageToggle.checked ? 'ar' : 'en';
+        if (selectedImage.src) {
+            updateImageDetails(selectedImage.src);
+        }
+    });
+
+    images.forEach(image => {
+        image.addEventListener('click', (e) => {
+            const imgSrc = e.target.src;
+            const imgAlt = e.target.alt;
+            selectedImage.src = imgSrc;
+            selectedImage.alt = imgAlt;
+            updateImageDetails(imgSrc);
+        });
+    });
+
+    clearButton.addEventListener('click', () => {
+        selectedImage.src = '';
+        selectedImage.alt = '';
+        imageInfo.textContent = '';
+        selectedImage.style.display = 'none';
+        imageInfo.style.display = 'none';
+
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const folders = document.querySelectorAll('.folder h3');
+
+        // This function handles the click event on each folder
+        function handleFolderClick() {
+            const imagesContainer = this.nextElementSibling; // Get the next element, which should be the .images container
+
+            // Close all image containers first
+            document.querySelectorAll('.folder .images').forEach(container => {
+                container.style.display = 'none'; // Ensure all are closed
+            });
+
+            // Toggle the display of the clicked folder's images
+            if (images[imagesContainer] === 'flex') {
+                imagesContainer.style.display = 'none'; // Hide if it was visible
+            } else {
+                imagesContainer.style.display = 'flex'; // Show if it was hidden
+            }
+        }
+
+        // Attach the event handler to each folder header
+        folders.forEach(folder => {
+            folder.addEventListener('click', handleFolderClick);
+        });
+    });
+});
+
+
+const translations = {
+    en: {
+        title: 'How To Demo - MRI Brain Tumor Recognition',
+        demoTitle: 'How To Demo',
+        demoParagraph: 'Click on a folder to open it and display the images inside. Only one folder can be opened at a time. When you choose an image from any folder it would show the information about it.',
+        folderTitles: {
+            meningioma: 'Meningioma',
+            hemangioblastoma: 'Hemangioblastoma',
+            medulloblastoma: 'Medulloblastoma',
+            pilocyticAstrocytoma: 'Pilocytic Astrocytoma',
+            centralNeurocytoma: 'Central Neurocytoma'
+        },
+        clearButton: 'Clear',
+        menuItems: {
+            introduction: '<i class="fas fa-info-circle"></i> Introduction',
+            breakdown: '<i class="fas fa-chart-bar"></i> Breakdown',
+            feedback: '<i class="fas fa-envelope"></i> Feedback',
+            about: '<i class="fas fa-users"></i> About Us'
+        },
+    },
+    ar: {
+        title: 'كيفية العرض - التعرف على أورام الدماغ بالرنين المغناطيسي',
+        demoTitle: 'كيفية العرض',
+        demoParagraph: 'انقر على مجلد لفتحه وعرض الصور بداخله. يمكن فتح مجلد واحد فقط في كل مرة. عندما تختار صورة من أي مجلد، ستظهر المعلومات عنها',
+        folderTitles: {
+            meningioma: 'ورم السحايا',
+            hemangioblastoma: 'ورم وعائي دموي',
+            medulloblastoma: 'ورم أرومي نخاعي',
+            pilocyticAstrocytoma: 'ورم نجمي شعري',
+            centralNeurocytoma: 'ورم عصبي مركزي'
+        },
+        clearButton: 'مسح',
+        menuItems: {
+            introduction: '<span class="menu-text"> مقدمة</span><i class="fas fa-info-circle"></i> ',
+            breakdown: '<span class="menu-text"> التحليل</span><i class="fas fa-chart-bar"></i> ',
+            feedback: '<span class="menu-text"> الملاحظات </span><i class="fas fa-envelope"></i> ',
+            about: '<span class="menu-text"> معلومات عنا</span><i class="fas fa-users"></i>  '
+        },
+    }
+};
+
+function toggleLanguage() {
+    const isArabic = document.getElementById('language-toggle').checked;
+    const lang = isArabic ? 'ar' : 'en';
+    document.body.classList.toggle('arabic', isArabic);
+    document.getElementById('lang-label').textContent = isArabic ? 'AR' : 'EN';
+
+    const elementsToUpdate = [
+        { selector: 'title', property: 'textContent', value: translations[lang].title },
+        { selector: '#demo-title', property: 'textContent', value: translations[lang].demoTitle },
+        { selector: '#demo-paragraph', property: 'textContent', value: translations[lang].demoParagraph },
+        { selector: '#clear-button', property: 'textContent', value: translations[lang].clearButton },
+        { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
+        { selector: '#menu-breakdown', property: 'innerHTML', value: translations[lang].menuItems.breakdown },
+        { selector: '#menu-feedback', property: 'innerHTML', value: translations[lang].menuItems.feedback },
+        { selector: '#menu-about', property: 'innerHTML', value: translations[lang].menuItems.about },
+        { selector: '#sidebar-title', property: 'textContent', value: translations[lang].demoTitle }
+    ];
+
+    elementsToUpdate.forEach(({ selector, property, value }) => {
+        const element = document.querySelector(selector);
+        element.style.opacity = 0;
+        setTimeout(() => {
+            element[property] = value;
+            element.style.opacity = 1;
+        }, 300);
+    });
+
+    const folders = document.querySelectorAll('.folder h3');
+    folders[0].textContent = translations[lang].folderTitles.meningioma;
+    folders[1].textContent = translations[lang].folderTitles.hemangioblastoma;
+    folders[2].textContent = translations[lang].folderTitles.medulloblastoma;
+    folders[3].textContent = translations[lang].folderTitles.pilocyticAstrocytoma;
+    folders[4].textContent = translations[lang].folderTitles.centralNeurocytoma;
+}
+
+document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
