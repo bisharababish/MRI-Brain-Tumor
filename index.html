@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRI Brain Tumor Recognition</title>
+    <link rel="icon" href="images/MRI Icon.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <h1><span class="highlight">MRI</span> Brain Tumor Recognition</h1>
+        <label class="switch">
+            <input type="checkbox" id="language-toggle" onchange="toggleLanguage()">
+            <span class="slider round"></span>
+            <span id="lang-label">EN</span>
+        </label>
+    </div>
+    <div class="container">
+        <nav class="mega-menu">
+            <ul>
+                <li>
+                    <br>
+                    <a href="#" id="menunavi">Navigation</a>
+                        <div class="dropdown">
+                            <div class="dropdown-section">
+                                <ul>
+                                     <li><a href="#Introduction" id="menu-intro"></i> Introduction</a></li>
+                                     <li><a href="Pages/howtodemonstrate.html" target="_blank" id="menu-demo"></i> How To Demo</a></li>
+                                     <li><a href="Pages/aboutus.html" target="_blank" id="menu-about"></i> About Us</a></li>
+                                </ul>
+                             </div>  
+                         </div>
+                    </li>
+             </ul>
+        </nav>
+        <div class="content">
+            <section id="Introduction" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">Introduction</h2>
+                    <p id="intro-paragraph">
+                        Welcome to a new era in medical diagnostics. Our MRI Brain Tumor Recognition Application harnesses the power of Artificial Intelligence (AI) to revolutionize the detection and analysis of brain tumors. Designed for accuracy and speed, our application specifically targets complex tumors such as: Meningioma, Hemangioblastoma, Medulloblastoma, Pilocytic Astrocytoma, and central Neurocytoma.
+                    </p>
+                    <div class="image-container">
+                        <img src="images/meningioma.jpeg" alt="MRI Meningioma Image" class="intro-image" title="Meningioma">
+                        <img src="images/hemangioblastoma.jpeg" alt="MRI Hemangioblastoma Image" class="intro-image" title="Hemangioblastoma">
+                        <img src="images/medulloblastoma.jpg" alt="MRI Medulloblastoma Image" class="intro-image" title="Medulloblastoma">
+                        <img src="images/pilocyticastrocytoma.jpeg" alt="MRI Pilocytic Astrocytoma Image" class="intro-image" title="Pilocytic Astrocytoma">
+                        <img src="images/centralneurocytoma.jpeg" alt="MRI Central Neurocytoma Image" class="intro-image" title="Central Neurocytoma">
+                    </div>
+                    <p id="intro-second-paragraph">
+                        MRI Brain Tumor Recognition Application is a combination of Artificial intelligence (AI) and MRI to accurately detect brain tumors. Unlike the traditional method that relies on radiologists, the application provides a fast, accurate, and efficient way to diagnose brain tumors and offer patients the necessary information, including possible treatments. This project aims to improve the detection of brain tumors faster and with a higher success rate than the traditional method.
+                    </p>
+                    <p id="intro-third-paragraph">
+                        Led by two dedicated computer science students passionate about leveraging technology for societal betterment, our project focuses on blending expertise in AI, medical imaging, and oncology. With a shared commitment to advancing healthcare, we aspire to contribute significantly to the collective efforts in the fight against brain cancer.
+                    </p>
+                </div>
+            </section>
+            <section id="Feedback" class="section">
+                <div class="section-content">
+                    <h2 class="section-title">Feedback Submission</h2>
+                    <p id="feedback-paragraph">If you have any questions or having some feedbacks, please feel free to hit us up with some!</p>
+                    <form action="submit_feedback.php" method="post" onsubmit="showMessage()" class="contact-form">
+                        <script>
+                            function showMessage() {
+                                alert("Message received! Thank you for your feedback.");
+                            }
+                        </script>
+                        <label for="name" id="name-label">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email" id="email-label">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message" id="message-label">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <button type="submit" class="submit-btn">Send Feedback</button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <button id="back-to-top" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+    <script src="scripts/close-slide.js"></script>
+    <script src="scripts/scrollup.js"></script>
+    <script src="scripts/feedback.js"></script>
+    <script src="scripts/TranslationCodes.js/index.js"></script>
+</body>
+</html>
