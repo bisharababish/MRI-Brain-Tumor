@@ -1,11 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
-/* the whole html page for smoother scroll */
 html {
     scroll-behavior: smooth;
 }
 
-/* body page for the whole page which defines some certain things */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #2c3e50, #4ca1af);
@@ -27,7 +25,6 @@ body {
     padding: 20px;
 }
 
-/* mega menu dropdown for the navigation panel with its three sections*/
 .mega-menu {
     position: relative;
     width: 100%;
@@ -121,7 +118,6 @@ body {
     color: white;
 }
 
-/* button to switch languages en to ar */
 .switch {
     position: absolute;
     top: 20px;
@@ -181,7 +177,6 @@ body {
     color: #FF6B6B;
 }
 
-/* fade in affect when translation*/
 .title,
 .team-member .member-details h3,
 .team-member .member-role,
@@ -193,7 +188,6 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-/* Fade-in effect for language switch */
 .switch input:checked~#lang-label,
 .switch input:checked+.slider,
 .switch input:checked+.slider:before {
@@ -201,7 +195,6 @@ body {
 }
 
 
-/* content whole page css */
 .content {
     width: 100%;
     background: rgba(255, 255, 255, 0.1);
@@ -217,7 +210,6 @@ body {
 
 }
 
-/*  team section pics and things */
 .team-section {
     display: flex;
     flex-wrap: wrap;
@@ -318,7 +310,6 @@ body {
     line-height: 1.6;
 }
 
-/* arabic translation */
 .arabic .bio-label,
 .arabic .member-bio,
 .arabic .team-member .member-details h3,
@@ -344,7 +335,6 @@ body {
     margin-left: 20px;
 }
 
-/* back to top button */
 #back-to-top {
     position: fixed;
     bottom: 20px;
@@ -385,7 +375,6 @@ body {
 }
 
 
-/* media for mobile responsiveness */
 @media (max-width: 768px) {
     html {
         overflow-x: scroll;

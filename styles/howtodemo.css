@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
-/* the whole html page for smoother scroll */
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
 
-/* body page for the whole page which defines some certain things */
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #2c3e50, #4ca1af);
@@ -26,7 +24,6 @@ body {
     flex-direction: column;
 }
 
-/* mega menu dropdown for the navigation panel with its three sections*/
 .mega-menu {
     position: relative;
     width: 100%;
@@ -121,7 +118,6 @@ body {
     color: white;
 }
 
-/* button to switch languages en to ar */
 .switch {
     position: absolute;
     top: 20px;
@@ -184,7 +180,6 @@ body {
 
 .arabic #lang-label {
     margin-left: 15px;
-    /* Ensure the label does not shift in Arabic */
 }
 
 .switch input:checked~#lang-label {
@@ -192,7 +187,6 @@ body {
 
 }
 
-/* fade in affect when translation*/
 #demo-title,
 #demo-paragraph,
 #clear-button,
@@ -207,7 +201,6 @@ body {
 }
 
 
-/* content whole page css */
 .content {
     flex: 1;
     padding: 20px;
@@ -220,7 +213,6 @@ body {
     position: relative;
 }
 
-/* section css  */
 .section {
     width: 1200px;
     margin-bottom: 33px;
@@ -267,7 +259,6 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* sidebar for the mri types with its folder names. */
 .sidebar {
     width: 250px;
     background: linear-gradient(45deg, #2e3d49, #3a6073);
@@ -306,7 +297,6 @@ body {
     background: #425b71;
 }
 
-/* images of the mri positions. */
 .images {
     display: none;
     position: absolute;
@@ -360,8 +350,6 @@ body {
     text-align: left;
 }
 
-/* everything in arabic translation for above 
- changing the mri types of pics to right side. */
 .arabic {
     direction: rtl;
     text-align: right;
@@ -413,7 +401,6 @@ body {
     background: #34495e;
 }
 
-/* Selected image display effect */
 #selected-image {
     transition: opacity 0.3s ease-in-out;
 }
@@ -425,7 +412,6 @@ body {
     gap: 20px;
 }
 
-/*  clear button for the images and information. */
 #clear-button {
     margin-left: 930px;
     background-color: #FF6B6B;
