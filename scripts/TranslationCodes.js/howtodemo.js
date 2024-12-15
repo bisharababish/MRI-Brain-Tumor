@@ -9,100 +9,70 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const imageDetails = {
         en: {
-            'meningioma.jpeg': ['Tumor: any', 'Tumorous:any', 'Overview:any', 'Severity:any', 'Accuracy:any', 'Dimensions:any', 'Therapies:any', 'Removable:any'],
-            'test.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'meningioma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'Te-gl_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Glioma is a type of tumor that occurs in the brain and spinal cord.', 'Severity: High', 'Accuracy: 95%', 'Dimensions: 4.5 cm × 3.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-gl_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: A sample overview of the glioma tumor.', 'Severity: Moderate', 'Accuracy: 90%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-gl_0013.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Details about Glioma.', 'Severity: Low', 'Accuracy: 85%', 'Dimensions: 3.5 cm × 3.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
 
-            'hemangioblastoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'hemangioblastoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'hemangioblastoma3.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
+            'Te-me_0010.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: Meningioma is a tumor that forms on the membranes covering the brain and spinal cord.', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-me_0011.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: A sample overview for Meningioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-me_0012.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: Meningioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
 
-
-            'medulloblastoma.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'medulloblastoma1.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'medulloblastoma2.jpg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-
-
-            'pilocyticastrocytoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'pilocyticastrocytoma1.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'pilocyticastrocytoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-
-
-            'centralneurocytoma.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'centralneurocytoma1.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-            'centralneurocytoma2.jpeg': ['Tumor:', 'Tumorous:', 'Overview:', 'Severity:', 'Accuracy:', 'Dimensions:', 'Therapies:', 'Removable:'],
-
+            'Te-pi_0010.jpg': ['Tumor: Pituitary', 'Tumorous: Yes', 'Overview: Pituitary tumor details.', 'Severity: Low', 'Accuracy: 94%', 'Dimensions: 2.5 cm × 2.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
+            'Te-pi_0011.jpg': ['Tumor: Pituitary', 'Tumorous: Yes', 'Overview: Sample overview for Pituitary.', 'Severity: Moderate', 'Accuracy: 89%', 'Dimensions: 3.0 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-pi_0012.jpg': ['Tumor: Pituitary', 'Tumorous: Yes', 'Overview: Pituitary tumor information.', 'Severity: High', 'Accuracy: 85%', 'Dimensions: 4.0 cm × 3.5 cm', 'Therapies: Surgery', 'Removable: Yes'],
         },
         ar: {
-            'meningioma.jpeg': ['الورم: ورم السحايا', 'ورم: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي داخل الجمجمة.', 'شدة: منخفضة', 'دقة: 95%', 'الأبعاد: 4.5 سم × 3.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'test.jpeg': ['ورم: نعم', 'نظرة عامة: نظرة عامة اختبارية للورم.', 'شدة: متوسطة', 'دقة: 90%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'meningioma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
+            'Te-gl_0011.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: الورم الدبقي هو نوع من الأورام التي تحدث في الدماغ والنخاع الشوكي.', 'الشدة: عالية', 'الدقة: 95%', 'الأبعاد: 4.5 سم × 3.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-gl_0012.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم الدبقي.', 'الشدة: متوسطة', 'الدقة: 90%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-gl_0013.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم الدبقي.', 'الشدة: منخفضة', 'الدقة: 85%', 'الأبعاد: 3.5 سم × 3.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
 
+            'Te-me_0010.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي.', 'الشدة: منخفضة', 'الدقة: 90%', 'الأبعاد: 3.5 سم × 2.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-me_0011.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم السحائي.', 'الشدة: متوسطة', 'الدقة: 88%', 'الأبعاد: 4.0 سم × 3.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-me_0012.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم السحائي.', 'الشدة: عالية', 'الدقة: 92%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
 
-            'hemangioblastoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-            'hemangioblastoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-            'hemangioblastoma3.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-
-            'medulloblastoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:ss', 'قابل للإزالة:ss'],
-            'medulloblastoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-            'medulloblastoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-
-
-            'pilocyticastrocytoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:ss', 'العلاجات:ss', 'قابل للإزالة:ss'],
-            'pilocyticastrocytoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-            'pilocyticastrocytoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-
-
-            'centralneurocytoma.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:ss', 'العلاجات:ss', 'قابل للإزالة:ss'],
-            'centralneurocytoma1.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-            'centralneurocytoma2.jpeg': ['الورم:', 'ورم:', 'نظرة عامة:', 'شدة:', 'دقة:', 'الأبعاد:', 'العلاجات:', 'قابل للإزالة:'],
-
+            'Te-pi_0010.jpg': ['الورم: الورم النخامي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم النخامي.', 'الشدة: منخفضة', 'الدقة: 94%', 'الأبعاد: 2.5 سم × 2.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
+            'Te-pi_0011.jpg': ['الورم: الورم النخامي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم النخامي.', 'الشدة: متوسطة', 'الدقة: 89%', 'الأبعاد: 3.0 سم × 2.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-pi_0012.jpg': ['الورم: الورم النخامي', 'ورمي: نعم', 'نظرة عامة: معلومات عن الورم النخامي.', 'الشدة: عالية', 'الدقة: 85%', 'الأبعاد: 4.0 سم × 3.5 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
         }
     };
 
     function updateImageDetails(imgSrc) {
         const imgName = imgSrc.split('/').pop();
         const details = imageDetails[currentLanguage][imgName];
-        imageInfo.innerHTML = ''; // Clear previous content
+
+        imageInfo.innerHTML = '';
         const ul = document.createElement('ul');
-        if (currentLanguage === 'ar') {
-            ul.classList.add('arabic-text');
-        }
+        if (currentLanguage === 'ar') ul.classList.add('arabic-text');
         details.forEach(detail => {
             const li = document.createElement('li');
             li.textContent = detail;
             ul.appendChild(li);
         });
         imageInfo.appendChild(ul);
-        selectedImage.style.display = 'block'; // Ensure the image is displayed
-        imageInfo.style.display = 'block'; // Ensure the info is displayed
+        selectedImage.style.display = 'block';
+        imageInfo.style.display = 'block';
     }
 
     languageToggle.addEventListener('change', () => {
         currentLanguage = languageToggle.checked ? 'ar' : 'en';
-        if (selectedImage.src) {
-            updateImageDetails(selectedImage.src);
-        }
+        if (selectedImage.src) updateImageDetails(selectedImage.src);
     });
 
     images.forEach(image => {
-        image.addEventListener('click', (e) => {
+        image.addEventListener('click', e => {
             const imgSrc = e.target.src;
-            const imgAlt = e.target.alt;
             selectedImage.src = imgSrc;
-            selectedImage.alt = imgAlt;
             updateImageDetails(imgSrc);
         });
     });
 
     clearButton.addEventListener('click', () => {
         selectedImage.src = '';
-        selectedImage.alt = '';
         imageInfo.textContent = '';
         selectedImage.style.display = 'none';
         imageInfo.style.display = 'none';
-
     });
+
     document.addEventListener('DOMContentLoaded', () => {
         const folders = document.querySelectorAll('.folder h3');
 
@@ -130,11 +100,9 @@ const translations = {
         demoParagraph: 'Click on a folder to open it and display the images inside. Only one folder can be opened at a time. When you choose an image from any folder it would show the information about it.',
         sidebarTitle: 'MRI Brain Tumor Types',
         folderTitles: {
+            Glioma: 'Glioma',
             meningioma: 'Meningioma',
-            hemangioblastoma: 'Hemangioblastoma',
-            medulloblastoma: 'Medulloblastoma',
-            pilocyticAstrocytoma: 'Pilocytic Astrocytoma',
-            centralNeurocytoma: 'Central Neurocytoma'
+            Pituitary: 'Pituitary',
         },
         clearButton: 'Clear',
         menuItems: {
@@ -150,11 +118,9 @@ const translations = {
         demoParagraph: 'انقر على مجلد لفتحه وعرض الصور بداخله. يمكن فتح مجلد واحد فقط في كل مرة. عندما تختار صورة من أي مجلد، ستظهر المعلومات عنها',
         sidebarTitle: 'أنواع أورام الدماغ بالرنين المغناطيسي',
         folderTitles: {
-            meningioma: 'ورم السحايا',
-            hemangioblastoma: 'ورم وعائي دموي',
-            medulloblastoma: 'ورم أرومي نخاعي',
-            pilocyticAstrocytoma: 'ورم نجمي شعري',
-            centralNeurocytoma: 'ورم عصبي مركزي'
+            Glioma: 'الورم الدبقي',
+            meningioma: 'الورم السحائي',
+            Pituitary: 'الغدة النخامية',
         },
         clearButton: 'مسح',
         menuItems: {
@@ -196,12 +162,9 @@ function toggleLanguage() {
     });
 
     const folders = document.querySelectorAll('.folder h3');
-    folders[0].textContent = translations[lang].folderTitles.meningioma;
-    folders[1].textContent = translations[lang].folderTitles.hemangioblastoma;
-    folders[2].textContent = translations[lang].folderTitles.medulloblastoma;
-    folders[3].textContent = translations[lang].folderTitles.pilocyticAstrocytoma;
-    folders[4].textContent = translations[lang].folderTitles.centralNeurocytoma;
-
+    folders[0].textContent = translations[lang].folderTitles.Glioma;
+    folders[1].textContent = translations[lang].folderTitles.meningioma;
+    folders[2].textContent = translations[lang].folderTitles.Pituitary;
 }
 
 document.getElementById('language-toggle').addEventListener('change', toggleLanguage);

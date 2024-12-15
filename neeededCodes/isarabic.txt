@@ -1,4 +1,0 @@
-if (!isArabic) {
-    location.reload();
-    return;
- }

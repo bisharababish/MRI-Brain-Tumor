@@ -18,11 +18,9 @@ const translations = {
             aboutUs: 'About Us',
         },
         imageTitles: {
-            meningioma: 'Meningioma',
-            hemangioblastoma: 'Hemangioblastoma',
-            medulloblastoma: 'Medulloblastoma',
-            pilocyticAstrocytoma: 'Pilocytic Astrocytoma',
-            centralNeurocytoma: 'Central Neurocytoma'
+            Glioma: 'Glioma',
+            Meningioma: 'Meningioma',
+            Pituitary: 'Pituitary',
         }
 
     },
@@ -45,11 +43,9 @@ const translations = {
             menunavi: 'تصفح'
         },
         imageTitles: {
-            meningioma: 'ورم السحايا',
-            hemangioblastoma: 'ورم وعائي دموي',
-            medulloblastoma: 'ورم أرومي نخاعي',
-            pilocyticAstrocytoma: 'ورم نجمي شعري',
-            centralNeurocytoma: 'ورم عصبي مركزي'
+            Glioma: 'الورم الدبقي',
+            Meningioma: 'الورم السحائي',
+            Pituitary: 'الغدة النخامية',
         }
     }
 };
@@ -77,7 +73,7 @@ function toggleLanguage() {
         { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
         { selector: '#menu-demo', property: 'innerHTML', value: translations[lang].menuItems.howToDemo },
         { selector: '#menu-about', property: 'innerHTML', value: translations[lang].menuItems.aboutUs },
-        { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi } // Added 'property' field here
+        { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi }
     ];
 
     elementsToUpdate.forEach(({ selector, property, value }) => {
