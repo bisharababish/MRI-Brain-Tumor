@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
     $stmt->close();
     $conn->close();
+    header(header: "Location: index.html");
     exit();
 }
 
