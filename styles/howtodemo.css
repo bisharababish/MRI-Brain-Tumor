@@ -17,7 +17,7 @@ body {
 }
 
 .container {
-    max-width: 1285px;
+    max-width: 90%;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -355,6 +355,7 @@ body {
     text-align: right;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+    max-width: 90%;
 }
 
 .arabic-text {
