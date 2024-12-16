@@ -46,7 +46,7 @@
  .mega-menu {
      position: relative;
      width: 100%;
-     margin-top: 2px;
+     margin-top: 6px;
      bottom: 110px;
      top: 7%;
      left: 0;
@@ -104,8 +104,6 @@
  .mega-menu ul li a:hover::after {
      width: 100%;
  }
-
-
 
  .dropdown {
      position: absolute;
@@ -464,138 +462,125 @@
      left: 100%;
  }
 
- @media (max-width: 1200px) {
-     .container {
-         padding: 15px;
-     }
-
-     .content {
-         width: 100%;
-         padding: 15px;
-     }
-
-     .section {
-         width: 100%;
-         padding: 15px;
-     }
-
-     .section-title {
-         font-size: 28px;
-     }
-
-     .section-content {
-         padding: 20px;
-     }
-
-     .contact-form {
-         width: 100%;
-         padding: 20px;
-     }
-
-     .mega-menu {
-         margin-top: 2px;
-         bottom: 100px;
-     }
-
-     .arabic .mega-menu {
-         margin-top: 18px;
-     }
+ .arabic .mega-menu {
+     margin-top: 1px;
  }
-
-
 
  @media (max-width: 1024px) {
      .container {
-         padding: 10px;
-     }
-
-     .content {
-         width: 100%;
-         padding: 10px;
-     }
-
-     .section {
-         width: 100%;
-         padding: 10px;
-     }
-
-     .section-title {
-         font-size: 24px;
-     }
-
-     .section-content {
-         padding: 15px;
-     }
-
-     .contact-form {
-         width: 100%;
-         padding: 15px;
-     }
-
-     .mega-menu {
-         margin-top: 2px;
+         padding-top: 15px;
          bottom: 100px;
      }
 
-     .arabic .mega-menu {
-         margin-top: 18px;
+     .mega-menu ul {
+         flex-wrap: wrap;
      }
+
+     .mega-menu a {
+         font-size: 14px;
+         padding: 8px 10px;
+     }
+
+     .arabic .mega-menu {
+         padding-top: 10px;
+     }
+
+     .section-title {
+         font-size: 22px;
+     }
+
+     .arabic .mega-menu {
+         margin-top: 20px;
+     }
+
  }
 
  @media (max-width: 768px) {
-     .container {
-         padding: 10px;
+     .header h1 {
+         font-size: 24px;
      }
 
-     .content {
-         width: 100%;
-         padding: 10px;
+     .arabic .mega-menu {
+         margin-top: 15px;
      }
 
-     .title {
-         font-size: 1.8rem;
-         padding: 0 15px;
+     .mega-menu {
+         flex-direction: column;
+         align-items: center;
+         margin-top: 15px;
      }
 
-     .introduction {
-         font-size: 1rem;
-         padding: 0 15px;
-         line-height: 1.5;
+     .mega-menu ul {
+         flex-wrap: wrap;
      }
 
-     .section {
-         width: 100%;
-         padding: 10px;
+     .mega-menu li {
+         padding: 5px;
      }
 
      .section-title {
          font-size: 20px;
      }
 
-     .section-content {
-         padding: 15px;
+     .content {
+         padding: 10px;
      }
 
      .contact-form {
-         width: 100%;
-         padding: 15px;
+         padding: 10px;
      }
 
-     .mega-menu {
-         padding-top: 12px;
+     button.submit-btn {
+         font-size: 14px;
+         padding: 8px 15px;
      }
 
-     .arabic .mega-menu {
-         margin-top: 18px;
+     span {
+         margin-top: -5px;
      }
+
  }
 
- @media (max-width: 640px) {
-     .mega-menu {
-         padding-top: 10px;
+ @media (max-width: 480px) {
+     .header h1 {
+         font-size: 20px;
      }
 
-     .arabic .mega-menu {
-         margin-top: 18px;
+
+     .mega-menu ul {
+         flex-wrap: wrap;
+     }
+
+     .mega-menu a {
+         font-size: 12px;
+         padding: 6px 8px;
+     }
+
+     .mega-menu ul li a:hover::after {
+         width: 80%;
+     }
+
+     .section-title {
+         font-size: 18px;
+     }
+
+     .content {
+         padding: 8px;
+     }
+
+     .contact-form {
+         padding: 8px;
+     }
+
+     button.submit-btn {
+         font-size: 12px;
+         padding: 6px 12px;
+     }
+
+     #back-to-top {
+         padding: 8px;
+         font-size: 14px;
+         bottom: 15px;
+         right: 15px;
      }
  }
