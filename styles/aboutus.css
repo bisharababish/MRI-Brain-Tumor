@@ -393,6 +393,7 @@ body {
 
     .team-section {
         flex-direction: column;
+        width: 100%;
     }
 
     .team-member {
@@ -449,14 +450,30 @@ body {
         text-align: center;
     }
 
-
     .arabic .team-member {
         direction: rtl;
         text-align: right;
     }
 
-    .arabic .member-details,
-    .arabic .member-bio {
-        text-align: right;
+    .arabic .member-bio,
+    .arabic .bio-label {
+        text-align: center;
+    }
+
+    .arabic .team-member {
+        direction: rtl;
+        text-align: center;
+    }
+
+    .arabic .member-details {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .arabic .member-role {
+        text-align: center;
     }
 }
