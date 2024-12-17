@@ -516,7 +516,7 @@
      }
 
      .header h1 {
-         font-size: 24px;
+         font-size: 18px;
          margin-bottom: 10px;
          text-align: center;
      }
@@ -572,7 +572,11 @@
      }
 
      .switch {
-         margin: 0;
+         margin-right: -8px;
+     }
+
+     .arabic .switch {
+         margin-right: -8px;
      }
  }
 
