@@ -516,16 +516,9 @@
      }
 
      .header h1 {
+         font-size: 18px;
          margin-bottom: 10px;
          text-align: center;
-     }
-
-     .header h1 span {
-         font-size: 18px;
-     }
-
-     .header h1 {
-         font-size: 18px;
      }
 
      #lang-label {
@@ -580,6 +573,7 @@
 
      .switch {
          margin-right: -8px;
+         margin-top: 25px;
      }
 
      .arabic .switch {
