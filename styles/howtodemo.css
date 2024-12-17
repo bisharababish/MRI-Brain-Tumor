@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;500&display=swap');
 
+
 html {
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -32,6 +33,7 @@ body {
     background: transparent;
     transform: translateY(-10px);
     z-index: 1000;
+
 }
 
 .mega-menu ul {
@@ -490,9 +492,12 @@ body {
 
 
 @media (max-width: 768px) {
+
     .container {
         padding: 15px;
         flex-direction: column;
+        align-items: center;
+        display: flex;
         align-items: center;
     }
 
@@ -503,7 +508,8 @@ body {
 
     .content {
         padding: 15px;
-        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
     .section {
@@ -528,6 +534,7 @@ body {
         width: 100%;
         padding: 10px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-left: -10px;
     }
 
     .sidebar h2 {
@@ -571,6 +578,7 @@ body {
         align-items: center;
         padding: 10px;
         width: 100%;
+        margin-left: -10px;
     }
 
     .image-display img {
@@ -592,7 +600,6 @@ body {
         align-items: stretch;
         gap: 10px;
     }
-
 
     .folder .images {
         position: static;
@@ -619,8 +626,18 @@ body {
     .arabic {
         text-align: right;
         direction: rtl;
+        max-width: 100%;
     }
 
+    .arabic .image-display {
+        margin-right: -10px;
+        align-items: center;
+    }
+
+    .arabic .sidebar {
+        margin-right: -10px;
+        align-items: center;
+    }
 
     .arabic .switch {
         position: absolute;
@@ -630,6 +647,9 @@ body {
 
     .arabic .container {
         padding: 0 10px;
+        align-items: center;
+        justify-content: center;
+        width: 100%
     }
 
     .arabic .folder h3 {
@@ -672,8 +692,12 @@ body {
         align-items: flex-start;
     }
 
+
+
     .image-display #image-info {
         text-align: left;
         align-self: flex-start;
     }
+
+
 }
