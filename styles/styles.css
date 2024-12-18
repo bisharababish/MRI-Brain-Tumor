@@ -209,6 +209,7 @@
      margin-right: 50px;
      transition: color 0.3s ease;
      margin-left: 10px;
+     user-select: none;
  }
 
  .switch input:checked~#lang-label {
@@ -572,8 +573,10 @@
      }
 
      .switch {
-         margin-right: -8px;
-         margin-top: 30px;
+         position: absolute;
+         top: 50px;
+         right: 20px;
+         z-index: 1000;
      }
 
      .arabic .switch {
@@ -622,5 +625,6 @@
          font-size: 14px;
          bottom: 15px;
          right: 15px;
+
      }
  }
