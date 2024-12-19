@@ -48,7 +48,7 @@ class FileUploader(QWidget):
 
     def upload_section(self):
         # Upload Button
-        self.upload_button = QPushButton("Upload MRI/DICOM File", self)
+        self.upload_button = QPushButton("Upload MRI", self)
         self.upload_button.clicked.connect(self.open_file_dialog)
         self.layout.addWidget(self.upload_button)
 
