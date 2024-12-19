@@ -20,7 +20,7 @@ class AILoaderThread(QThread):
         start_time = time.time()
         for i in range(101):
             self.update_progress.emit(i)
-            time.sleep(0.03)  # Simulating AI processing delay
+            time.sleep(0.03)  
         result = "No Tumor Detected"  # Simulated AI result
         processing_time = time.time() - start_time
         self.result_ready.emit(f"{result} (Processed in {processing_time:.2f}s)")
@@ -31,46 +31,34 @@ class FileUploader(QWidget):
         self.setWindowTitle("MRI Brain Tumor Recognition")
         self.setGeometry(100, 100, 800, 600)
         self.layout = QVBoxLayout()
-
-        # Upload Section
         self.upload_section()
-
-        # File History
         self.file_history_section()
-
-        # Set Layout
         self.setLayout(self.layout)
 
     def upload_section(self):
         section_layout = QVBoxLayout()
 
-        # Upload Button
         self.upload_button = QPushButton("Upload File")
         self.upload_button.clicked.connect(self.open_file_dialog)
         section_layout.addWidget(self.upload_button)
 
-        # File Path Label
         self.file_label = QLabel("No file selected")
         self.file_label.setStyleSheet("font-weight: bold; color: #555;")
         section_layout.addWidget(self.file_label)
 
-        # Image Display
         self.image_label = QLabel()
         self.image_label.setAlignment(Qt.AlignCenter)
         self.image_label.setStyleSheet("border: 1px solid #ddd; background-color: #f9f9f9;")
         self.image_label.setFixedHeight(300)
         section_layout.addWidget(self.image_label)
 
-        # AI Processing Result Label
         self.result_label = QLabel("AI Result: Not processed yet")
         self.result_label.setStyleSheet("font-weight: bold; color: #007BFF;")
         section_layout.addWidget(self.result_label)
 
-        # Progress Bar
         self.progress_bar = QProgressBar()
         section_layout.addWidget(self.progress_bar)
 
-        # Download Button
         self.pdf_button = QPushButton("Generate Result as PDF")
         self.pdf_button.setEnabled(False)
         self.pdf_button.clicked.connect(self.download_pdf)
@@ -81,7 +69,6 @@ class FileUploader(QWidget):
     def file_history_section(self):
         section_layout = QVBoxLayout()
 
-        # File History List
         self.history_label = QLabel("File History:")
         self.history_label.setStyleSheet("font-weight: bold; color: #333;")
         section_layout.addWidget(self.history_label)
@@ -124,20 +111,14 @@ class FileUploader(QWidget):
     def download_pdf(self):
         pdf = FPDF()
         pdf.add_page()
-
-        # Set document title
         pdf.set_font("Arial", 'B', 16)
         pdf.cell(0, 10, "MRI Brain Tumor Analysis Report", ln=True, align='C')
         pdf.ln(10)
-
-        # Patient Information Section
         pdf.set_font("Arial", '', 12)
         random_mrn = random.randint(100000, 999999)
         pdf.cell(0, 10, f"Patient Medical Record Number: {random_mrn}", ln=True)
         pdf.cell(0, 10, f"Examination Date: {time.ctime()}", ln=True)
         pdf.ln(10)
-
-        # Analysis Results Section
         pdf.set_font("Arial", 'B', 14)
         pdf.cell(0, 10, "Analysis Results", ln=True)
         pdf.set_font("Arial", '', 12)
@@ -151,7 +132,6 @@ class FileUploader(QWidget):
         pdf.cell(0, 10, "Surgical Removability: [Feasibility of Tumor Resection]", ln=True)
         pdf.ln(10)
 
-        # Add uploaded image
         uploaded_file = self.file_label.text().split(": ")[-1]
         if os.path.exists(uploaded_file):
             try:
@@ -160,7 +140,6 @@ class FileUploader(QWidget):
                 pdf.cell(0, 10, "Unable to embed the image in this report.", ln=True)
         pdf.ln(20)
 
-        # Save PDF
         save_path, _ = QFileDialog.getSaveFileName(self, "Save PDF", "", "PDF Files (*.pdf);;All Files (*)")
         if save_path:
             try:
