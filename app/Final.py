@@ -1,11 +1,15 @@
 import random
 import sys
-from PyQt5.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog, QLabel, QMessageBox, QProgressBar, QListWidget, QHBoxLayout)
+from PyQt5.QtWidgets import (
+    QApplication, QWidget, QVBoxLayout, QPushButton, QFileDialog,
+    QLabel, QMessageBox, QProgressBar, QListWidget, QHBoxLayout
+)
 from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap, QImage
 from fpdf import FPDF
 import os
 import time
+
 
 # AI Processing Simulation
 class AILoaderThread(QThread):  
@@ -20,16 +24,18 @@ class AILoaderThread(QThread):
         start_time = time.time()
         for i in range(101):
             self.update_progress.emit(i)
-            time.sleep(0.03)  
+            time.sleep(0.03)
         result = "No Tumor Detected"  # Simulated AI result
         processing_time = time.time() - start_time
         self.result_ready.emit(f"{result} (Processed in {processing_time:.2f}s)")
+
 
 class FileUploader(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("MRI Brain Tumor Recognition")
         self.setGeometry(100, 100, 800, 600)
+        self.setAcceptDrops(True)  # Enable drag-and-drop
         self.layout = QVBoxLayout()
         self.upload_section()
         self.file_history_section()
@@ -82,11 +88,25 @@ class FileUploader(QWidget):
     def open_file_dialog(self):
         file_path, _ = QFileDialog.getOpenFileName(self, "Select File", "", "All Files (*)")
         if file_path:
+            self.handle_file(file_path)
+
+    def dragEnterEvent(self, event):
+        if event.mimeData().hasUrls():
+            event.accept()
+        else:
+            event.ignore()
+
+    def dropEvent(self, event):
+        urls = event.mimeData().urls()
+        if urls:
+            file_path = urls[0].toLocalFile()
+            self.handle_file(file_path)
+
+    def handle_file(self, file_path):
+        if file_path:
             self.file_label.setText(f"Selected File: {file_path}")
             self.display_image(file_path)
             self.process_file(file_path)
-        else:
-            self.file_label.setText("No file selected")
 
     def display_image(self, file_path):
         pixmap = QPixmap(file_path)
@@ -122,7 +142,6 @@ class FileUploader(QWidget):
         pdf.set_font("Arial", 'B', 14)
         pdf.cell(0, 10, "Analysis Results", ln=True)
         pdf.set_font("Arial", '', 12)
-        pdf.cell(0, 10, f"Examination Date: {time.ctime()}", ln=True)
         pdf.cell(0, 10, "Indication Evaluation: [Indication Evaluation]", ln=True)
         pdf.cell(0, 10, "Tumor Identification: [Tumor Identification]", ln=True)
         pdf.cell(0, 10, "Tumor Characteristics: [Tumor Characteristics]", ln=True)
@@ -147,6 +166,7 @@ class FileUploader(QWidget):
                 QMessageBox.information(self, "Success", f"PDF saved at {save_path}")
             except Exception as e:
                 QMessageBox.critical(self, "Error", f"Failed to save PDF: {e}")
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
