@@ -2,10 +2,10 @@
 // feedbackdatabase
 // bisharababish
 // Bishara112#
-$servername = "localhost:3307";
-$username = "root";
-$password = "";
-$database = "feedbackdatabase";
+$servername = "3307";
+$username = "4566618_feedbackdatabase	";
+$password = "Bishara112#";
+$database = "4566618_feedbackdatabase";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
