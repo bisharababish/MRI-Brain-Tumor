@@ -2,8 +2,8 @@
 // feedbackdatabase
 // bisharababish
 // Bishara112#
-$servername = "3307";
-$username = "4566618_feedbackdatabase	";
+$servername = "fdb1029.awardspace.net";
+$username = "4566618_feedbackdatabase";
 $password = "Bishara112#";
 $database = "4566618_feedbackdatabase";
 
