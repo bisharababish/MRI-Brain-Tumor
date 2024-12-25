@@ -476,6 +476,49 @@
      margin-top: 1px;
  }
 
+ .footer {
+     background: rgba(0, 0, 0, 0.5);
+     border-radius: 10px;
+     transition: background 0.3s ease, box-shadow 0.3s ease;
+     color: white;
+     text-align: center;
+     padding: 40px 20px;
+     margin-top: 50px;
+ }
+
+ footer:hover {
+     background: rgba(0, 0, 0, 0.7);
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+ }
+
+ .footer-title {
+     font-size: 24px;
+     color: #8fcdff;
+     margin-bottom: 10px;
+ }
+
+ .contact-details {
+     margin-top: 15px;
+     font-size: 18px;
+ }
+
+ .email-link {
+     color: #FF6B6B;
+     font-weight: bold;
+     text-decoration: none;
+     transition: color 0.3s ease;
+ }
+
+ .email-link:hover {
+     color: #FF4B4B;
+ }
+
+ .additional-info {
+     margin-top: 20px;
+ }
+
+
+
  @media (max-width: 1024px) {
      .container {
          padding-top: 15px;
