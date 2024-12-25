@@ -23,6 +23,7 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .mega-menu {
@@ -216,7 +217,6 @@ body {
 }
 
 .section {
-    width: 1200px;
     margin-bottom: 33px;
     min-height: 77vh;
     display: flex;
