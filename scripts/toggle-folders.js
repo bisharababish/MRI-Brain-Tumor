@@ -1,11 +1,10 @@
-// toggle-folders
 document.addEventListener('DOMContentLoaded', function () {
     const folders = document.querySelectorAll('.folder h3');
     let openFolder = null;
 
     folders.forEach(folder => {
         folder.addEventListener('click', function (event) {
-            event.stopPropagation(); // Prevent click event from bubbling up to the document
+            event.stopPropagation(); 
             const images = this.nextElementSibling;
 
             if (openFolder && openFolder !== images) {
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Close all folders when clicking outside
     document.addEventListener('click', function () {
         if (openFolder) {
             openFolder.style.display = 'none';

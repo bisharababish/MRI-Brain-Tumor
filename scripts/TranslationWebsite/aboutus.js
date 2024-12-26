@@ -128,8 +128,6 @@ function toggleLanguage() {
         }
     });
 
-
-    // Update menu items
     document.getElementById('menu-intro').innerHTML = translations[lang].menuItems.introduction;
     document.getElementById('menu-demo').innerHTML = translations[lang].menuItems.howToDemo;
     document.getElementById('menu-feedback').innerHTML = translations[lang].menuItems.feedback;

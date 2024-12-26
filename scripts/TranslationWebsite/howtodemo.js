@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', () => {
         function handleFolderClick() {
             const imagesContainer = this.nextElementSibling;
             document.querySelectorAll('.folder .images').forEach(container => {
-                container.style.display = 'none'; // Ensure all are closed
+                container.style.display = 'none'; 
             });
             if (images[imagesContainer] === 'flex') {
-                imagesContainer.style.display = 'none'; // Hide if it was visible
+                imagesContainer.style.display = 'none';
             } else {
-                imagesContainer.style.display = 'flex'; // Show if it was hidden
+                imagesContainer.style.display = 'flex'; 
             }
         }
         folders.forEach(folder => {
