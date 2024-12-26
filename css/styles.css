@@ -65,7 +65,7 @@
      padding: 10px 0;
      z-index: 1000;
      transition: top 0.3s ease;
- }
+  }
 
  .arabic .mega-menu {
      top: 6.8%;
@@ -78,7 +78,6 @@
      display: flex;
      justify-content: center;
      background: transparent;
-
  }
 
  .mega-menu li {
