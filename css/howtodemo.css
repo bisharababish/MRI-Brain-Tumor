@@ -491,6 +491,16 @@ body {
     display: block;
 }
 
+@media (min-width: 992px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        align-items: center;
+    }
+}
 
 @media (max-width: 768px) {
     html {
