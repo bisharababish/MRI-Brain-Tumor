@@ -35,7 +35,6 @@ body {
     background: transparent;
     transform: translateY(-10px);
     z-index: 1000;
-
 }
 
 .mega-menu ul {
@@ -45,7 +44,6 @@ body {
     display: flex;
     justify-content: center;
     background: transparent;
-
 }
 
 .mega-menu li {
@@ -132,7 +130,6 @@ body {
     z-index: 10000;
     margin-right: 30px;
     margin-left: 60px;
-
 }
 
 
@@ -148,7 +145,6 @@ body {
     border-radius: 24px;
     transition: background-color 0.3s, transform 0.3s;
     margin-right: 28px;
-
 }
 
 .switch .slider:before {
@@ -179,7 +175,6 @@ body {
     margin-right: 10px;
     transition: color 0.3s ease;
     margin-left: 60px;
-
 }
 
 .arabic #lang-label {
@@ -188,7 +183,6 @@ body {
 
 .switch input:checked~#lang-label {
     color: #FF6B6B;
-
 }
 
 #demo-title,
@@ -293,7 +287,6 @@ body {
     transition: background 0.3s ease;
     border-radius: 5px;
     position: relative;
-
 }
 
 .folder h3:hover {
@@ -394,7 +387,6 @@ body {
     clear: both;
     width: 135%;
     box-sizing: border-box;
-
 }
 
 .arabic .folder.open .images {
@@ -711,6 +703,4 @@ body {
         text-align: left;
         align-self: flex-start;
     }
-
-
 }

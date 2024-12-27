@@ -16,7 +16,6 @@ body {
     align-items: center;
     min-height: 100vh;
     user-select: none;
-
 }
 
 .container {
@@ -170,7 +169,6 @@ body {
     margin-right: 10px;
     transition: color 0.3s ease;
     margin-left: 10px;
-
 }
 
 .switch input:checked~#lang-label {
@@ -205,9 +203,7 @@ body {
     flex-direction: column;
     gap: 20px;
     margin-top: 32px;
-
     transition: margin-left 0.3s ease;
-
 }
 
 .team-section {
