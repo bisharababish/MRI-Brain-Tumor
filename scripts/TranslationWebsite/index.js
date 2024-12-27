@@ -15,7 +15,7 @@ const translations = {
             aboutUs: 'About Us',
         },
         imageTitles: {
-            Meningioma: 'Meningioma',
+            Glioma: 'Glioma',
             NoTumor: 'No Tumor',
         }
 
@@ -36,7 +36,7 @@ const translations = {
             menunavi: 'تصفح'
         },
         imageTitles: {
-            Meningioma: 'الورم السحائي',
+            Glioma: 'الورم دبقي',
             NoTumor: 'لا يوجد ورم',
         }
     }

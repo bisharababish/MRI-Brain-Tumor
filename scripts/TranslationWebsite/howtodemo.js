@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageDetails = {
         en: {
 
-            'Te-me_0010.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: Meningioma is a tumor that forms on the membranes covering the brain and spinal cord.', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-me_0011.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: A sample overview for Meningioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-me_0012.jpg': ['Tumor: Meningioma', 'Tumorous: Yes', 'Overview: Meningioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
+            'Te-me_0010.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Meningioma is a tumor that forms on the membranes covering the brain and spinal cord.', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-me_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: A sample overview for Meningioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-me_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Meningioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
 
             'Te-gl_0011.jpg': ['Tumor: No Tumor', 'Tumorous: Yes', 'Overview: Glioma is a type of tumor that occurs in the brain and spinal cord.', 'Severity: High', 'Accuracy: 95%', 'Dimensions: 4.5 cm × 3.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
             'Te-gl_0012.jpg': ['Tumor: No Tumor', 'Tumorous: Yes', 'Overview: A sample overview of the glioma tumor.', 'Severity: Moderate', 'Accuracy: 90%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
@@ -96,7 +96,7 @@ const translations = {
         demoParagraph: 'Click on a folder to open it and display the images inside. Only one folder can be opened at a time. When you choose an image from any folder it would show the information about it.',
         sidebarTitle: 'MRI Brain Tumor Types',
         folderTitles: {
-            meningioma: 'Meningioma',
+            Glioma: 'Glioma',
             NoTumor: 'No Tumor',
         },
         clearButton: 'Clear',
@@ -113,7 +113,7 @@ const translations = {
         demoParagraph: 'انقر على مجلد لفتحه وعرض الصور بداخله. يمكن فتح مجلد واحد فقط في كل مرة. عندما تختار صورة من أي مجلد، ستظهر المعلومات عنها',
         sidebarTitle: 'أنواع أورام الدماغ بالرنين المغناطيسي',
         folderTitles: {
-            meningioma: 'الورم السحائي',
+            Glioma: 'الورم دبقي',
             NoTumor: 'لا يوجد ورم',
 
         },
@@ -157,7 +157,7 @@ function toggleLanguage() {
     });
 
     const folders = document.querySelectorAll('.folder h3');
-    folders[0].textContent = translations[lang].folderTitles.meningioma;
+    folders[0].textContent = translations[lang].folderTitles.Glioma;
     folders[1].textContent = translations[lang].folderTitles.NoTumor;
 
 }
