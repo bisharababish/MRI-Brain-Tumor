@@ -31,7 +31,6 @@ const translations = {
             menunavi: 'Navigation',
             introduction: 'Introduction',
             howToDemo: ' How To Demo',
-            feedback: 'Feedback'
         }
     },
     ar: {
@@ -66,7 +65,6 @@ const translations = {
         menuItems: {
             introduction: 'مقدمة ',
             howToDemo: ' كيفية العرض ',
-            feedback: ' الملاحظات',
             menunavi: 'تصفح'
         }
     }
@@ -111,7 +109,6 @@ function toggleLanguage() {
         `},
         { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
         { selector: '#menu-demo', property: 'innerHTML', value: translations[lang].menuItems.howToDemo },
-        { selector: '#menu-feedback', property: 'innerHTML', value: translations[lang].menuItems.feedback },
         { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi }
 
     ];

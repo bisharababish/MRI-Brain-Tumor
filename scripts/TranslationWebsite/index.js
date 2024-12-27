@@ -15,9 +15,8 @@ const translations = {
             aboutUs: 'About Us',
         },
         imageTitles: {
-            Glioma: 'Glioma',
             Meningioma: 'Meningioma',
-            Pituitary: 'Pituitary',
+            NoTumor: 'No Tumor',
         }
 
     },
@@ -37,9 +36,8 @@ const translations = {
             menunavi: 'تصفح'
         },
         imageTitles: {
-            Glioma: 'الورم الدبقي',
             Meningioma: 'الورم السحائي',
-            Pituitary: 'الغدة النخامية',
+            NoTumor: 'لا يوجد ورم',
         }
     }
 };
