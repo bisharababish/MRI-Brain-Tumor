@@ -178,10 +178,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // download button
 document.getElementById('download-button').addEventListener('click', function () {
-    const fileUrl = '../app/dist/Final.exe'; // Update this path with your actual file path
+    const fileUrl = '../app/dist/Final.exe';
     const link = document.createElement('a');
     link.href = fileUrl;
-    link.download = 'MRI Brain Tumor Recognition.exe'; // Name of the file when downloaded
+    link.download = 'mridetection.exe';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
