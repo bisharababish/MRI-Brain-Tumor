@@ -1,3 +1,8 @@
+
+const lang = getCurrentLanguage();
+document.body.classList.toggle('arabic', lang === 'ar');
+document.getElementById('lang-label').textContent = lang === 'ar' ? 'AR' : 'EN';
+
 const translations = {
     en: {
         title: 'MRI Brain Tumor Recognition',
@@ -65,6 +70,9 @@ function toggleLanguage() {
         { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi }
     ];
 
+    window.pageTranslations = translations;
+    document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
+
     elementsToUpdate.forEach(({ selector, property, value }) => {
         const element = document.querySelector(selector);
         if (element) {
@@ -86,3 +94,8 @@ function toggleLanguage() {
 
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    updateContent();
+    updateLanguageLinks();
+    initializeLanguageToggle();
+});

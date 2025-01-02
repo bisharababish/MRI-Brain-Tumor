@@ -1,3 +1,8 @@
+
+const lang = getCurrentLanguage();
+document.body.classList.toggle('arabic', lang === 'ar'); 
+document.getElementById('lang-label').textContent = lang === 'ar' ? 'AR' : 'EN'; 
+
 const translations = {
     en: {
         title: 'About Us - MRI Brain Tumor Recognition',
@@ -28,9 +33,9 @@ const translations = {
             conclusionDetails: 'My dedication to AI research and development has been a cornerstone of my academic career. The MRI Brain Tumor Recognition project represents a significant achievement, showcasing my ability to apply AI technology to address critical healthcare challenges. I am excited about the potential impact of our project and look forward to contributing further to the field of AI and medical diagnostics.'
         },
         menuItems: {
-            menunavi: 'Navigation',
             introduction: 'Introduction',
-            howToDemo: ' How To Demo',
+            howToDemo: 'How To Demo',
+            menunavi: 'Navigation'
         }
     },
     ar: {
@@ -65,7 +70,7 @@ const translations = {
         menuItems: {
             introduction: 'مقدمة ',
             howToDemo: ' كيفية العرض ',
-            menunavi: 'تصفح'
+            menunavi: 'تواصل معنا'
         }
     }
 };
@@ -109,9 +114,13 @@ function toggleLanguage() {
         `},
         { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
         { selector: '#menu-demo', property: 'innerHTML', value: translations[lang].menuItems.howToDemo },
-        { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi }
+        { selector: '#menunavi', property: 'innerHTML', value: translations[lang].menuItems.menunavi }
 
     ];
+    window.pageTranslations = translations;
+
+    document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
+
     document.getElementById('lang-label').textContent = isArabic ? 'AR' : 'EN';
 
     elementsToUpdate.forEach(({ selector, property, value }) => {
@@ -127,7 +136,7 @@ function toggleLanguage() {
 
     document.getElementById('menu-intro').innerHTML = translations[lang].menuItems.introduction;
     document.getElementById('menu-demo').innerHTML = translations[lang].menuItems.howToDemo;
-    document.getElementById('menu-feedback').innerHTML = translations[lang].menuItems.feedback;
+    document.getElementById('menu-feedback').innerHTML = translations[lang].menuItems.menunavi;
 
 
     window.addEventListener('scroll', function () {
@@ -140,3 +149,10 @@ function toggleLanguage() {
 
 }
 document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateAboutUsContent();
+    updateLanguageLinks();
+    initializeLanguageToggle();
+});

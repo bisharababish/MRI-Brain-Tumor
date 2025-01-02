@@ -1,3 +1,7 @@
+const lang = getCurrentLanguage();
+document.body.classList.toggle('arabic', lang === 'ar');
+document.getElementById('lang-label').textContent = lang === 'ar' ? 'AR' : 'EN';
+
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.images img');
     const selectedImage = document.getElementById('selected-image');
@@ -10,24 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageDetails = {
         en: {
 
-            'Te-me_0010.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Meningioma is a tumor that forms on the membranes covering the brain and spinal cord.', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-me_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: A sample overview for Meningioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-me_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Meningioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
+            'Te-gl_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Glioma is a tumor that forms when glial cells grow out of control', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-gl_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: A sample overview for Glioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
+            'Te-gl_0013.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Glioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
 
-            'Te-gl_0011.jpg': ['Tumor: No Tumor', 'Tumorous: Yes', 'Overview: Glioma is a type of tumor that occurs in the brain and spinal cord.', 'Severity: High', 'Accuracy: 95%', 'Dimensions: 4.5 cm × 3.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-gl_0012.jpg': ['Tumor: No Tumor', 'Tumorous: Yes', 'Overview: A sample overview of the glioma tumor.', 'Severity: Moderate', 'Accuracy: 90%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-gl_0013.jpg': ['Tumor: No Tumor', 'Tumorous: Yes', 'Overview: Details about Glioma.', 'Severity: Low', 'Accuracy: 85%', 'Dimensions: 3.5 cm × 3.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
+            'Te-no_0010.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
+            'Te-no_0011.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
+            'Te-no_0012.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
 
         },
         ar: {
 
-            'Te-me_0010.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي.', 'الشدة: منخفضة', 'الدقة: 90%', 'الأبعاد: 3.5 سم × 2.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-me_0011.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم السحائي.', 'الشدة: متوسطة', 'الدقة: 88%', 'الأبعاد: 4.0 سم × 3.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-me_0012.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم السحائي.', 'الشدة: عالية', 'الدقة: 92%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
+            'Te-gl_0010.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي.', 'الشدة: منخفضة', 'الدقة: 90%', 'الأبعاد: 3.5 سم × 2.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-gl_0011.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم السحائي.', 'الشدة: متوسطة', 'الدقة: 88%', 'الأبعاد: 4.0 سم × 3.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
+            'Te-gl_0012.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم السحائي.', 'الشدة: عالية', 'الدقة: 92%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
 
-            'Te-gl_0011.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: الورم الدبقي هو نوع من الأورام التي تحدث في الدماغ والنخاع الشوكي.', 'الشدة: عالية', 'الدقة: 95%', 'الأبعاد: 4.5 سم × 3.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-gl_0012.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم الدبقي.', 'الشدة: متوسطة', 'الدقة: 90%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-gl_0013.jpg': ['الورم: الورم الدبقي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم الدبقي.', 'الشدة: منخفضة', 'الدقة: 85%', 'الأبعاد: 3.5 سم × 3.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
+            'Te-no_0010.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
+            'Te-no_0011.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
+            'Te-no_0012.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
 
         }
     };
@@ -103,7 +107,7 @@ const translations = {
         menuItems: {
             menunavi: 'Navigation',
             introduction: ' Introduction',
-            feedback: ' Feedback',
+            feedback: ' Contact Us',
             about: ' About Us'
         },
     },
@@ -119,9 +123,9 @@ const translations = {
         },
         clearButton: 'مسح',
         menuItems: {
-            about: 'مقدمة',
-            feedback: ' الملاحظات',
-            introduction: ' نبذة عنا',
+            introduction: 'مقدمة',
+            feedback: 'تواصل معنا',
+            about: ' نبذة عنا',
             menunavi: 'تصفح'
         },
     }
@@ -143,7 +147,9 @@ function toggleLanguage() {
         { selector: '#menu-about', property: 'innerHTML', value: translations[lang].menuItems.about },
         { selector: '#menunavi', property: 'textContent', value: translations[lang].menuItems.menunavi }
     ];
+    window.pageTranslations = translations;
 
+    document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
 
     elementsToUpdate.forEach(({ selector, property, value }) => {
         const element = document.querySelector(selector);
@@ -163,3 +169,9 @@ function toggleLanguage() {
 }
 
 document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateDemoContent();
+    updateLanguageLinks();
+    initializeLanguageToggle();
+});
