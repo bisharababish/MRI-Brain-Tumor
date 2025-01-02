@@ -167,11 +167,22 @@ function toggleLanguage() {
     folders[1].textContent = translations[lang].folderTitles.NoTumor;
 
 }
- 
+
 document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
 
 document.addEventListener('DOMContentLoaded', () => {
     updateDemoContent();
     updateLanguageLinks();
     initializeLanguageToggle();
+});
+
+// download button
+document.getElementById('download-button').addEventListener('click', function () {
+    const fileUrl = '../app/dist/Final.exe'; // Update this path with your actual file path
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = 'MRI Brain Tumor Recognition.exe'; // Name of the file when downloaded
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 });

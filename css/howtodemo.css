@@ -256,6 +256,25 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+#download-button {
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 7px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#download-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
 .sidebar {
     width: 250px;
     background: linear-gradient(45deg, #2e3d49, #3a6073);

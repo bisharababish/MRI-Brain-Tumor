@@ -7,18 +7,6 @@ window.addEventListener('scroll', function () {
     }
 });
 
-
-
-// feedback
-const form = document.querySelector('.contact-form');
-form.addEventListener('submit', function (event) {
-    if (!form.checkValidity()) {
-        event.preventDefault();
-        alert("Please fill out all required fields correctly.");
-    }
-});
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const folders = document.querySelectorAll('.folder h3');
 
@@ -37,3 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
