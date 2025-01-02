@@ -75,13 +75,7 @@ function toggleLanguage() {
 
     elementsToUpdate.forEach(({ selector, property, value }) => {
         const element = document.querySelector(selector);
-        if (element) {
-            element.style.opacity = 0;
-            setTimeout(() => {
-                element[property] = value;
-                element.style.opacity = 1;
-            }, 300);
-        }
+        if (element) element[property] = value;
     });
     const images = document.querySelectorAll('.intro-image');
     images.forEach((img, index) => {

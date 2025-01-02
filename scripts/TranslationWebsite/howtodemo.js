@@ -167,7 +167,7 @@ function toggleLanguage() {
     folders[1].textContent = translations[lang].folderTitles.NoTumor;
 
 }
-
+ 
 document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
 
 document.addEventListener('DOMContentLoaded', () => {
