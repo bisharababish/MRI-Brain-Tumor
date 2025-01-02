@@ -89,7 +89,6 @@ function toggleLanguage() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    updateContent();
     updateLanguageLinks();
     initializeLanguageToggle();
 });
