@@ -14,24 +14,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const imageDetails = {
         en: {
 
-            'Te-gl_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Glioma is a tumor that forms when glial cells grow out of control', 'Severity: Low', 'Accuracy: 90%', 'Dimensions: 3.5 cm × 2.5 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-gl_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: A sample overview for Glioma.', 'Severity: Moderate', 'Accuracy: 88%', 'Dimensions: 4.0 cm × 3.0 cm', 'Therapies: Surgery, Radiation', 'Removable: Yes'],
-            'Te-gl_0013.jpg': ['Tumor: Glioma', 'Tumorous: Yes', 'Overview: Glioma details.', 'Severity: High', 'Accuracy: 92%', 'Dimensions: 5.0 cm × 4.0 cm', 'Therapies: Surgery', 'Removable: Yes'],
+            'Te-gl_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
+            'Te-gl_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
+            'Te-gl_0013.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
 
-            'Te-no_0010.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
-            'Te-no_0011.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
-            'Te-no_0012.jpg': ['Tumor: No Tumor', 'Tumorous: No', 'Overview: N/A', 'Severity: N/A', 'Accuracy: N/A', 'Dimensions: N/A', 'Therapies: N/A', 'Removable: N/A'],
+            'Te-no_0010.jpg': ['Tumor: No Tumor'],
+            'Te-no_0011.jpg': ['Tumor: No Tumor'],
+            'Te-no_0012.jpg': ['Tumor: No Tumor'],
 
         },
         ar: {
 
-            'Te-gl_0010.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: الورم السحائي هو ورم يتشكل على الأغشية التي تغطي الدماغ والحبل الشوكي.', 'الشدة: منخفضة', 'الدقة: 90%', 'الأبعاد: 3.5 سم × 2.5 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-gl_0011.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: نظرة عامة على الورم السحائي.', 'الشدة: متوسطة', 'الدقة: 88%', 'الأبعاد: 4.0 سم × 3.0 سم', 'العلاجات: الجراحة، الإشعاع', 'قابل للإزالة: نعم'],
-            'Te-gl_0012.jpg': ['الورم: الورم السحائي', 'ورمي: نعم', 'نظرة عامة: تفاصيل حول الورم السحائي.', 'الشدة: عالية', 'الدقة: 92%', 'الأبعاد: 5.0 سم × 4.0 سم', 'العلاجات: الجراحة', 'قابل للإزالة: نعم'],
+            'Te-gl_0010.jpg': ['الورم: الورم السحائي'],
+            'Te-gl_0011.jpg': ['الورم: الورم السحائي'],
+            'Te-gl_0012.jpg': ['الورم: الورم السحائي'],
 
-            'Te-no_0010.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
-            'Te-no_0011.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
-            'Te-no_0012.jpg': ['الورم:  لا الورم ', 'ورمي: لا', 'نظرة عامة: لا يوجد', 'الشدة: لا يوجد ', 'الدقة: لا يوجد', 'الأبعاد: لا يوجد', 'العلاجات: لا يوجد', 'قابل للإزالة: لا يوجد'],
+            'Te-no_0010.jpg': ['الورم:  لا الورم'],
+            'Te-no_0011.jpg': ['الورم:  لا الورم'],
+            'Te-no_0012.jpg': ['الورم:  لا الورم'],
 
         }
     };
