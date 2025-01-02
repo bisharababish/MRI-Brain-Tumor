@@ -178,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // download button
 document.getElementById('download-button').addEventListener('click', function () {
-    const fileUrl = '../app/dist/Final.exe';
+    const fileUrl = '../app/dist/mridetection.exe';
     const link = document.createElement('a');
     link.href = fileUrl;
     link.download = 'mridetection.exe';
