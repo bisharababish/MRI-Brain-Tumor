@@ -2,6 +2,8 @@ const lang = getCurrentLanguage();
 document.body.classList.toggle('arabic', lang === 'ar');
 document.getElementById('lang-label').textContent = lang === 'ar' ? 'AR' : 'EN';
 
+let currentLanguage = 'en';
+
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('.images img');
     const selectedImage = document.getElementById('selected-image');
@@ -9,11 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const clearButton = document.getElementById('clear-button');
     const languageToggle = document.getElementById('language-toggle');
 
-    let currentLanguage = 'en';
+    let currentLanguage = document.getElementById('language-toggle').checked ? 'ar' : 'en';
 
     const imageDetails = {
         en: {
-
             'Te-gl_0011.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
             'Te-gl_0012.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
             'Te-gl_0013.jpg': ['Tumor: Glioma', 'Tumorous: Yes'],
@@ -21,20 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
             'Te-no_0010.jpg': ['Tumor: No Tumor'],
             'Te-no_0011.jpg': ['Tumor: No Tumor'],
             'Te-no_0012.jpg': ['Tumor: No Tumor'],
-
         },
         ar: {
+            'Te-gl_0011.jpg': ['الورم: الورم الدبقي', 'ورم: نعم'],
+            'Te-gl_0012.jpg': ['الورم: الورم الدبقي', 'ورم: نعم'],
+            'Te-gl_0013.jpg': ['الورم: الورم الدبقي', 'ورم: نعم'],
 
-            'Te-gl_0010.jpg': ['الورم: الورم السحائي'],
-            'Te-gl_0011.jpg': ['الورم: الورم السحائي'],
-            'Te-gl_0012.jpg': ['الورم: الورم السحائي'],
-
-            'Te-no_0010.jpg': ['الورم:  لا الورم'],
-            'Te-no_0011.jpg': ['الورم:  لا الورم'],
-            'Te-no_0012.jpg': ['الورم:  لا الورم'],
-
+            'Te-no_0010.jpg': ['الورم: لا يوجد ورم'],
+            'Te-no_0011.jpg': ['الورم: لا يوجد ورم'],
+            'Te-no_0012.jpg': ['الورم: لا يوجد ورم'],
         }
     };
+
 
     function updateImageDetails(imgSrc) {
         const imgName = imgSrc.split('/').pop();
@@ -55,7 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     languageToggle.addEventListener('change', () => {
         currentLanguage = languageToggle.checked ? 'ar' : 'en';
-        if (selectedImage.src) updateImageDetails(selectedImage.src);
+        if (selectedImage.src) {
+            const imgName = imgName.substring(imgName.lastIndexOf('/') + 1);
+            updateImageDetails(imgName);
+        }
+        toggleLanguage();
     });
 
     images.forEach(image => {
@@ -91,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             folder.addEventListener('click', handleFolderClick);
         });
     });
+
 });
 
 const translations = {
@@ -152,7 +156,6 @@ function toggleLanguage() {
     ];
     window.pageTranslations = translations;
 
-    document.getElementById('language-toggle').addEventListener('change', toggleLanguage);
 
     elementsToUpdate.forEach(({ selector, property, value }) => {
         const element = document.querySelector(selector);
