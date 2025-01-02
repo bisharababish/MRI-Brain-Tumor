@@ -142,13 +142,10 @@ class FileUploader(QWidget):
         pdf.set_font("Arial", 'B', 14)
         pdf.cell(0, 10, "Analysis Results", ln=True)
         pdf.set_font("Arial", '', 12)
-        pdf.cell(0, 10, "Indication Evaluation: [Indication Evaluation]", ln=True)
+        pdf.cell(0, 10, "Tumor Name: [Tumor Name]", ln=True)
         pdf.cell(0, 10, "Tumor Identification: [Tumor Identification]", ln=True)
-        pdf.cell(0, 10, "Tumor Characteristics: [Tumor Characteristics]", ln=True)
-        pdf.cell(0, 10, "General Findings and Observations: [Overview]", ln=True)
-        pdf.cell(0, 10, "Severity Assessment: [Severity Assessment]", ln=True)
-        pdf.cell(0, 10, "Therapeutic Recommendations: [Treatment Plans]", ln=True)
-        pdf.cell(0, 10, "Surgical Removability: [Feasibility of Tumor Resection]", ln=True)
+        pdf.cell(0, 10, "Tumor Type: [Tumor Type]", ln=True)
+        pdf.cell(0, 10, "Tumor Locations: [Tumor Locations]", ln=True)
         pdf.ln(10)
 
         uploaded_file = self.file_label.text().split(": ")[-1]
