@@ -99,6 +99,7 @@ const translations = {
         demoTitle: 'How To Demo',
         demoParagraph: 'Click on a folder to open it and display the images inside. Only one folder can be opened at a time. When you choose an image from any folder it would show the information about it.',
         sidebarTitle: 'MRI Brain Tumor Types',
+        downloadButton: 'Download the App',
         folderTitles: {
             Glioma: 'Glioma',
             NoTumor: 'No Tumor',
@@ -116,6 +117,7 @@ const translations = {
         demoTitle: 'كيفية العرض',
         demoParagraph: 'انقر على مجلد لفتحه وعرض الصور بداخله. يمكن فتح مجلد واحد فقط في كل مرة. عندما تختار صورة من أي مجلد، ستظهر المعلومات عنها',
         sidebarTitle: 'أنواع أورام الدماغ بالرنين المغناطيسي',
+        downloadButton: 'تحميل التطبيق',
         folderTitles: {
             Glioma: 'الورم دبقي',
             NoTumor: 'لا يوجد ورم',
@@ -142,6 +144,7 @@ function toggleLanguage() {
         { selector: '#sidebar-title', property: 'textContent', value: translations[lang].sidebarTitle },
         { selector: '#demo-paragraph', property: 'textContent', value: translations[lang].demoParagraph },
         { selector: '#clear-button', property: 'textContent', value: translations[lang].clearButton },
+        { selector: '#download-button', property: 'textContent', value: translations[lang].downloadButton },
         { selector: '#menu-intro', property: 'innerHTML', value: translations[lang].menuItems.introduction },
         { selector: '#menu-feedback', property: 'innerHTML', value: translations[lang].menuItems.feedback },
         { selector: '#menu-about', property: 'innerHTML', value: translations[lang].menuItems.about },
