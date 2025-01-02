@@ -42,7 +42,7 @@
  }
 
  .header h1 {
-     font-size: 36px;
+     font-size: 30px;
  }
 
  .header .highlight {
@@ -238,7 +238,6 @@
  #menu-about {
      transition: opacity 0.3s ease-in-out;
  }
-
 
  a:focus,
  button:focus,
