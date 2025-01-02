@@ -16,10 +16,9 @@ function updateLanguageLinks() {
     const lang = getCurrentLanguage();
     const links = document.querySelectorAll('a');
     links.forEach(link => {
-        if (!link.href.includes('lang=')) {
-            const separator = link.href.includes('?') ? '&' : '?';
-            link.href = `${link.href}${separator}lang=${lang}`;
-        }
+        const url = new URL(link.href, window.location.origin);
+        url.searchParams.set('lang', lang);
+        link.href = url.toString();
     });
 }
 
