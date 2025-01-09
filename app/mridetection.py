@@ -35,7 +35,7 @@ class FileUploader(QWidget):
         super().__init__()
         self.setWindowTitle("MRI Brain Tumor Recognition")
         self.setGeometry(100, 100, 800, 600)
-        self.setAcceptDrops(True)  # Enable drag-and-drop
+        self.setAcceptDrops(True) 
         self.layout = QVBoxLayout()
         self.upload_section()
         self.file_history_section()
