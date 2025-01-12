@@ -255,7 +255,7 @@ body {
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
-#download-button {
+/* #download-button {
     margin-left: 10px;
     background-color: #4CAF50;
     color: white;
@@ -271,7 +271,7 @@ body {
 #download-button:hover {
     background-color: #45a049;
     transform: scale(1.05);
-}
+} */
 
 
 .sidebar {
